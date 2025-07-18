@@ -5,7 +5,7 @@ A modern, responsive e-commerce shopping cart application built with React, Redu
 ## 🔗 Links
 
 - **GitHub Repository**: [https://github.com/Naitik4897/ShopApp](https://github.com/Naitik4897/ShopApp)
-- **Live Demo**: [Deploy on Vercel to get the live URL]
+- **Live Demo**: [https://shop-app-naitik.vercel.app/](https://shop-app-naitik.vercel.app/)
 
 ## 🚀 Features
 
@@ -148,7 +148,7 @@ The application is fully responsive and works seamlessly across:
    ```
 
 2. **Deploy to Vercel**
-   - Visit [Vercel](https://vercel.com/)
+   - Visit [Vercel](https://vercel.com)
    - Sign in with your GitHub account
    - Click "New Project"
    - Import your GitHub repository: `https://github.com/Naitik4897/ShopApp`
