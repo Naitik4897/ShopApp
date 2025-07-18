@@ -2,6 +2,11 @@
 
 A modern, responsive e-commerce shopping cart application built with React, Redux Toolkit, and Tailwind CSS.
 
+## 🔗 Links
+
+- **GitHub Repository**: [https://github.com/Naitik4897/ShopApp](https://github.com/Naitik4897/ShopApp)
+- **Live Demo**: [Deploy on Vercel to get the live URL]
+
 ## 🚀 Features
 
 - **Product Catalog**: Browse through a collection of products with detailed information
@@ -33,7 +38,7 @@ Before running this project, make sure you have the following installed:
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Naitik4897/ShopApp.git
    cd ShopApp
    ```
 
@@ -135,19 +140,37 @@ The application is fully responsive and works seamlessly across:
 
 ## 🚀 Deployment
 
-To deploy this application:
+### Deploy to Vercel (Recommended)
 
 1. **Build the project**
    ```bash
    npm run build
    ```
 
-2. **Deploy the `build` folder** to your preferred hosting service:
-   - Netlify
-   - Vercel
-   - GitHub Pages
-   - AWS S3
-   - Any static hosting service
+2. **Deploy to Vercel**
+   - Visit [Vercel](https://vercel.com/)
+   - Sign in with your GitHub account
+   - Click "New Project"
+   - Import your GitHub repository: `https://github.com/Naitik4897/ShopApp`
+   - Configure build settings:
+     - Framework Preset: Create React App
+     - Build Command: `npm run build`
+     - Output Directory: `build`
+   - Click "Deploy"
+
+3. **Alternative: Deploy via Vercel CLI**
+   ```bash
+   npm i -g vercel
+   vercel --prod
+   ```
+
+### Other Deployment Options
+
+Deploy the `build` folder to your preferred hosting service:
+- **Netlify**: Drag and drop the build folder or connect via GitHub
+- **GitHub Pages**: Use `gh-pages` package
+- **AWS S3**: Upload build folder to S3 bucket with static hosting
+- **Firebase Hosting**: Use Firebase CLI
 
 ## 🤝 Contributing
 
