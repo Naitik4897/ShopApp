@@ -21,33 +21,56 @@ const Product = ({post}) => {
 
 
     return (
-        <div className="flex flex-col items-center justify-between bg-white hover:scale-110 transition-all duration-300  ease-in gap-3 p-4 mt-10 ml-5 rounded-xl shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:shadow-[0px_0px_95px_53px_#00000024] ">
-            <div>
-                <p className="text-gray-700 font-semibold text-lg text-left truncate mt-1 w-40">{post.title}</p>
-            </div>
-            <div>
-                <p className="w-40 text-gray-400 font-normal text-[10px] text-left">{post.description.split(" ").slice(0,10).join(" ") + "..."}</p>
-            </div>
-            <div className="h-[180px]">
-                <img src={post.image} className="h-full w-full" alt="" />
+        <div className="flex flex-col items-center justify-between bg-white hover:scale-[1.02] sm:hover:scale-105 transition-all duration-300 ease-in gap-3 p-3 sm:p-4 rounded-xl shadow-lg hover:shadow-xl border border-gray-100 h-full">
+            {/* Product Image */}
+            <div className="h-32 sm:h-40 md:h-48 w-full overflow-hidden rounded-lg">
+                <img 
+                    src={post.image} 
+                    className="h-full w-full object-contain hover:scale-110 transition-transform duration-300" 
+                    alt={post.title}
+                />
             </div>
             
-            <div className="flex justify-between items-center w-full mt-5">
-                <p className="text-green-600 font-semibold">{post.price}$</p>
+            {/* Product Title */}
+            <div className="w-full">
+                <p className="text-gray-800 font-semibold text-sm sm:text-base md:text-lg text-center line-clamp-2 leading-tight">
+                    {post.title}
+                </p>
             </div>
-            {
-                cart.some((p) => p.id === post.id) ?
-                (
-                    <button className="border-2 border-gray-700 text-gray-700 uppercase font-semibold px-3 py-1 rounded-full text-[12px] transition-all duration-300 ease-in hover:text-white hover:bg-gray-700" onClick={removeFromCart}>
-                        Remove Item
+            
+            {/* Product Description */}
+            <div className="w-full">
+                <p className="text-gray-500 font-normal text-xs sm:text-sm text-center line-clamp-2 leading-relaxed">
+                    {post.description.split(" ").slice(0,12).join(" ") + "..."}
+                </p>
+            </div>
+            
+            {/* Price and Button */}
+            <div className="w-full mt-auto">
+                <div className="flex justify-between items-center mb-3">
+                    <p className="text-green-600 font-bold text-base sm:text-lg">${post.price}</p>
+                    <div className="flex items-center">
+                        <span className="text-yellow-500 text-sm">★</span>
+                        <span className="text-gray-600 text-xs ml-1">{post.rating?.rate || 'N/A'}</span>
+                    </div>
+                </div>
+                
+                {cart.some((p) => p.id === post.id) ? (
+                    <button 
+                        className="w-full bg-red-600 text-white font-semibold py-2 px-4 rounded-lg text-xs sm:text-sm transition-all duration-300 ease-in hover:bg-red-700 active:scale-95"
+                        onClick={removeFromCart}
+                    >
+                        Remove from Cart
                     </button>
-                ) :
-                (
-                    <button className="border-2 border-gray-700 text-gray-700 uppercase font-semibold px-3 py-1 rounded-full text-[12px] transition-all duration-300 ease-in hover:text-white hover:bg-gray-700" onClick={addToCart}>
+                ) : (
+                    <button 
+                        className="w-full bg-green-600 text-white font-semibold py-2 px-4 rounded-lg text-xs sm:text-sm transition-all duration-300 ease-in hover:bg-green-700 active:scale-95"
+                        onClick={addToCart}
+                    >
                         Add to Cart
                     </button>
-                )
-            }
+                )}
+            </div>
         </div>
     )
 }
